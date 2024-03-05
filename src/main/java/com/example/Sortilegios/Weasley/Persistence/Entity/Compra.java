@@ -3,6 +3,7 @@ package com.example.Sortilegios.Weasley.Persistence.Entity;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "compra")
@@ -20,6 +21,16 @@ public class Compra {
    @ManyToOne
    @JoinColumn(name = "id_mago", insertable = false, updatable = false)
    private Mago mago;
+   @OneToMany(mappedBy = "compra", cascade = {CascadeType.ALL})
+   private List<CompraArticulo> articulos;
+
+   public List<CompraArticulo> getArticulos() {
+      return articulos;
+   }
+
+   public void setArticulos(List<CompraArticulo> articulos) {
+      this.articulos = articulos;
+   }
 
    public Integer getIdFactura() {
       return idFactura;

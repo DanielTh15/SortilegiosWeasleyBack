@@ -9,7 +9,7 @@ import org.mapstruct.Mappings;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = {PurchaseItemMapper.class})
 public interface PurchaseMapper {
 
     @Mappings({
@@ -17,6 +17,7 @@ public interface PurchaseMapper {
             @Mapping(source = "medioDePAgo", target = "paymentMethod"),
             @Mapping(source = "fecha", target = "date"),
             @Mapping(source = "idMag", target = "witcherId"),
+            @Mapping(source = "articulos", target = "items")
 
     })
     Purchase toPurchase(Compra compra);

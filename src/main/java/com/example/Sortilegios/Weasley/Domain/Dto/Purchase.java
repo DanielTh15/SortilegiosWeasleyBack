@@ -2,12 +2,14 @@ package com.example.Sortilegios.Weasley.Domain.Dto;
 
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Purchase {
     private Integer billId;
     private String paymentMethod;
     private LocalDateTime date;
     private String witcherId;
+    private List<PurchaseItem> items;
 
 
     public Integer getBillId() {
@@ -42,5 +44,11 @@ public class Purchase {
         this.witcherId = witcherId;
     }
 
+    public List<PurchaseItem> getItems() {
+        return items;
+    }
 
+    public void setItems(List<PurchaseItem> items) {
+        this.items = items;
+    }
 }

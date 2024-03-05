@@ -15,7 +15,7 @@ public interface CategoryMapper {
             @Mapping(source = "idCategoria", target = "idCategory"),
             @Mapping(source = "nombre", target = "name"),
             @Mapping(source = "descripcion", target = "description"),
-            @Mapping(source = "articulos", target = "Items")
+            @Mapping(source = "articulos", target = "items")
     })
     Category toCategory(Categoria categoria);
     List<Category> toCategories(List<Categoria> categorias);
