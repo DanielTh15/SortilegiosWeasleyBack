@@ -10,6 +10,7 @@ public class CompraArticulo {
     private CompraArticuloPK id;
     private Integer cantidad;
     private Float total;
+    @MapsId("idFactura")
     @ManyToOne
     @JoinColumn(name = "id_factura", updatable = false, insertable = false)
     private Compra compra;

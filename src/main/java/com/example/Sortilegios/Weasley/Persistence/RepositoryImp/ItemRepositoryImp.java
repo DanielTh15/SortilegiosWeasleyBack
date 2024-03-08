@@ -26,4 +26,10 @@ public class ItemRepositoryImp implements ItemRepository {
         List<Articulo> articulos = articuloCrud.findAll();
         return itemMapper.toItem(articulos);
     }
+
+    @Override
+    public Item save(Item item) {
+    Articulo articulo = itemMapper.toArticulo(item);
+        return itemMapper.toItem(articuloCrud.save(articulo));
+    }
 }

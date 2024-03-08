@@ -26,4 +26,11 @@ public class PurchaseRepositoryImp implements PurchaseRepository{
         List<Compra> compras = compraCrud.findAll();
         return purchaseMapper.toPurchases(compras);
     }
+
+    @Override
+    public Purchase save(Purchase purchase) {
+        Compra compra = purchaseMapper.toCompra(purchase);
+        compra.getArticulos().forEach(compraArticulo -> compraArticulo.setCompra(compra));
+        return purchaseMapper.toPurchase(compraCrud.save(compra));
+    }
 }

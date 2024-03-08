@@ -7,5 +7,6 @@ import java.util.List;
 public interface PurchaseService {
 
     List<Purchase> getAll();
+    Purchase save(Purchase purchase);
 
 }

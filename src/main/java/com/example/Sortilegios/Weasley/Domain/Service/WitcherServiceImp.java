@@ -22,4 +22,9 @@ public class WitcherServiceImp implements WitcherService{
     public List<Witcher> getAll() {
         return witcherRepository.getAll();
     }
+
+    @Override
+    public Witcher save(Witcher witcher) {
+        return witcherRepository.save(witcher);
+    }
 }

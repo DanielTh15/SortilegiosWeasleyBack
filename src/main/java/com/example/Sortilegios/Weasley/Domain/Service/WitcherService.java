@@ -8,5 +8,6 @@ import java.util.List;
 public interface WitcherService {
 
     List<Witcher> getAll();
+    Witcher save(Witcher witcher);
 
 }

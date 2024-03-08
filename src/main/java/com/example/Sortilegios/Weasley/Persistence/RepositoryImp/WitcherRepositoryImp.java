@@ -24,4 +24,9 @@ public class WitcherRepositoryImp implements WitcherRepository {
         List<Mago> magoList = magoCrud.findAll();
         return witcherMapper.toWitchers(magoList);
     }
+    @Override
+    public Witcher save(Witcher witcher) {
+        Mago mago = witcherMapper.toMago(witcher);
+        return witcherMapper.toWitcher(magoCrud.save(mago));
+    }
 }

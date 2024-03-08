@@ -7,6 +7,6 @@ import java.util.List;
 public interface PurchaseRepository {
 
     List<Purchase> getAll();
-
+    Purchase save(Purchase purchase);
 
 }

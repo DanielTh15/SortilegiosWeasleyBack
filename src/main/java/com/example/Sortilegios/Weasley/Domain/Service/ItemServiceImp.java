@@ -19,4 +19,9 @@ public class ItemServiceImp implements ItemService{
     public List<Item> getAll() {
         return itemRepository.getAll();
     }
+
+    @Override
+    public Item save(Item item) {
+        return itemRepository.save(item);
+    }
 }

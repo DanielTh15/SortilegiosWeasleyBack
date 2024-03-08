@@ -18,7 +18,11 @@ public class PurchaseServiceImp implements PurchaseService{
     }
     @Override
     public List<Purchase> getAll() {
-
         return purchaseRepository.getAll();
+    }
+
+    @Override
+    public Purchase save(Purchase purchase) {
+        return purchaseRepository.save(purchase);
     }
 }

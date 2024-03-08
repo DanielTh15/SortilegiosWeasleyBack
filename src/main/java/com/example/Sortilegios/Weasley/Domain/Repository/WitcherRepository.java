@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface WitcherRepository {
     List<Witcher> getAll();
+    Witcher save(Witcher witcher);
 }
